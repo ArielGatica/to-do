@@ -1,0 +1,25 @@
+{
+  "name": "api-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app/index.js",
+    "docker:build-dev": "docker build -t api-backend-dev .",
+    "docker:dev": "docker run -d -p 3050:3050 --restart=on-failure --name=api-backend-dev -e 'NODE_ENV=dev' api-backend-dev",
+    "docker:stop": "docker stop api-backend-dev",
+    "docker:rm": "docker rm api-backend-dev"
+  },
+  "author": "Ariel Gatica",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.12"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6"
+  }
+}
